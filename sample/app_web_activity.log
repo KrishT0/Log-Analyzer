@@ -1,0 +1,28 @@
+2025-06-12 14:30:01.123 [INFO] [WebServer] Request received: GET /api/v1/users/profile?id=USR789012 from 192.168.1.50 User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+2025-06-12 14:30:01.125 [DEBUG] [UserService] Fetching user data for USR789012. SQL: SELECT * FROM users WHERE user_id = 'USR789012'
+2025-06-12 14:30:01.150 [INFO] [PaymentService] Initiating payment process for order ORD98765. Amount: 1500.00
+2025-06-12 14:30:01.151 [INFO] [WebServer] Response sent: 200 OK /api/v1/users/profile in 28ms
+2025-06-12 14:30:02.005 [INFO] [WebServer] Request received: POST /api/v1/products/add from 203.0.113.12 User-Agent: "PostmanRuntime/7.36.1" Payload: {"product_name": "New Widget X", "price": 29.99, "category": "Electronics"}
+2025-06-12 14:30:02.010 [WARN] [ProductService] Product name 'New Widget X' already exists, attempting to update.
+2025-06-12 14:30:02.020 [ERROR] [Database] SQL Error: Duplicate entry 'New Widget X' for key 'product_name_unique'. Query: INSERT INTO products (product_name, price, category) VALUES ('New Widget X', 29.99, 'Electronics')
+2025-06-12 14:30:02.022 [ERROR] [ProductService] Failed to add product: Database constraint violation. User: "admin"
+2025-06-12 14:30:02.025 [INFO] [WebServer] Response sent: 500 Internal Server Error /api/v1/products/add in 20ms
+2025-06-12 14:30:03.456 [INFO] [WebServer] Request received: GET /assets/js/main.js from 192.168.1.51 User-Agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15" Referer: "https://example.com/dashboard"
+2025-06-12 14:30:03.460 [INFO] [WebServer] Response sent: 200 OK /assets/js/main.js in 4ms
+2025-06-12 14:30:04.789 [INFO] [AuthService] User 'john.doe' successfully logged in from IP 10.0.0.100
+2025-06-12 14:30:05.111 [INFO] [WebServer] Request received: GET /dashboard from 10.0.0.100 User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+2025-06-12 14:30:05.120 [DEBUG] [DashboardService] Loading widgets for 'john.doe'. Widgets: ["orders", "products", "reports"]
+2025-06-12 14:30:05.130 [INFO] [ReportService] Generating daily sales report. Date: 2025-06-11
+2025-06-12 14:30:05.150 [INFO] [WebServer] Response sent: 200 OK /dashboard in 39ms
+2025-06-12 14:30:06.000 [INFO] [SystemHealth] CPU Usage: 45%, Memory Usage: 60%
+2025-06-12 14:30:06.500 [INFO] [WebServer] Request received: GET /images/logo.png from 192.168.1.52 User-Agent: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/120.0.6099.109 Mobile/15E148 Safari/604.1"
+2025-06-12 14:30:06.510 [INFO] [WebServer] Response sent: 200 OK /images/logo.png in 10ms
+2025-06-12 14:30:07.123 [INFO] [PaymentService] Payment successful for order ORD98765. Transaction ID: TXN123456789
+2025-06-12 14:30:08.000 [INFO] [AuthService] Failed login attempt for user 'guest' from IP 203.0.113.20. Reason: Invalid password.
+2025-06-12 14:30:08.500 [WARN] [Configuration] Missing 'API_KEY_SECRET' in environment variables. Using default.
+2025-06-12 14:30:09.123 [INFO] [WebServer] Request received: GET /api/v1/products/list from 192.168.1.53 User-Agent: "Mozilla/5.0 (Linux; Android 10; SM-G973F) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36"
+2025-06-12 14:30:09.125 [DEBUG] [ProductService] Retrieving all products. Cache hit: false
+2025-06-12 14:30:09.150 [INFO] [WebServer] Response sent: 200 OK /api/v1/products/list in 27ms
+2025-06-12 14:30:10.000 [ERROR] [WorkerProcess] Background job 'data_cleanup' failed. Exception: "PermissionDeniedError: Cannot write to /var/log/temp_data.log" Stacktrace: "at CleanupJob.run (/app/jobs/cleanup.js:45:10) at Worker.execute (/app/worker.js:20:5)"
+2025-06-12 14:30:11.000 [INFO] [WebServer] Request received: GET /favicon.ico from 192.168.1.50 User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+2025-06-12 14:30:11.002 [INFO] [WebServer] Response sent: 204 No Content /favicon.ico in 1ms
