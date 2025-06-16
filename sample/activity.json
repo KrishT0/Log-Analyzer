@@ -1,0 +1,44 @@
+[
+  {
+    "timestamp": "2025-06-15T10:23:45Z",
+    "level": "INFO",
+    "service": "auth-service",
+    "message": "User login successful",
+    "userId": "a93f01b2",
+    "ip": "192.168.1.100"
+  },
+  {
+    "timestamp": "2025-06-15T10:25:01Z",
+    "level": "ERROR",
+    "service": "payment-service",
+    "message": "Payment processing failed",
+    "transactionId": "txn_8457be",
+    "error": "Insufficient funds",
+    "userId": "c29f93dd"
+  },
+  {
+    "timestamp": "2025-06-15T10:26:32Z",
+    "level": "WARN",
+    "service": "inventory-service",
+    "message": "Low stock warning",
+    "productId": "prod_1023",
+    "availableStock": 3
+  },
+  {
+    "timestamp": "2025-06-15T10:28:17Z",
+    "level": "DEBUG",
+    "service": "analytics-service",
+    "message": "Page view recorded",
+    "userId": "d14e23af",
+    "page": "/dashboard",
+    "durationMs": 412
+  },
+  {
+    "timestamp": "2025-06-15T10:30:09Z",
+    "level": "INFO",
+    "service": "email-service",
+    "message": "Verification email sent",
+    "email": "user@example.com",
+    "requestId": "req_123456"
+  }
+]

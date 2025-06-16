@@ -5,20 +5,41 @@ package cmd
 
 import (
 	"fmt"
+	"path/filepath"
+	"strings"
 
+	"github.com/KrishT0/log-analyzer/internal"
 	"github.com/spf13/cobra"
 )
 
 // analyzeCmd represents the analyze command
 var analyzeCmd = &cobra.Command{
-	Use:   "analyze",
-	Short: "A brief description of your command",
+	Use:   "analyze [file]",
+	Short: "Parse and analyze a file",
 	Long: `A longer description that spans multiple lines and likely contains examples
 and usage of using your command. 
-For example: log-analyzer analyze --file <logfile> --output <outputfile>`,
+For example: log-analyzer analyze <logfile>`,
+	Args: cobra.ExactArgs(1),
 
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("analyze called")
+		filePath := args[0]
+		ext := strings.ToLower(filepath.Ext(filePath))
+
+		switch ext {
+		case ".json":
+			internal.ParseJSON(filePath)
+		// case ".log":
+		// 	internal.ParseLog(filePath)
+		// case ".csv":
+		// 	parseCSV(filePath)
+		// case ".txt":
+		// 	parseTXT(filePath)
+		// case ".xml":
+		// 	parseXML(filePath)
+		default:
+			fmt.Println("Unsupported file format:", ext)
+		}
+
 	},
 }
 
