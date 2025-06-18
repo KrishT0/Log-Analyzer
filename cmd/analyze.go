@@ -20,7 +20,6 @@ var analyzeCmd = &cobra.Command{
 and usage of using your command. 
 For example: log-analyzer analyze <logfile>`,
 	Args: cobra.ExactArgs(1),
-
 	Run: func(cmd *cobra.Command, args []string) {
 		filePath := args[0]
 		ext := strings.ToLower(filepath.Ext(filePath))
@@ -28,8 +27,8 @@ For example: log-analyzer analyze <logfile>`,
 		switch ext {
 		case ".json":
 			internal.ParseJSON(filePath)
-		// case ".log":
-		// 	internal.ParseLog(filePath)
+		case ".log":
+			internal.ParseLog(filePath)
 		// case ".csv":
 		// 	parseCSV(filePath)
 		// case ".txt":
